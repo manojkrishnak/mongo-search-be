@@ -5,6 +5,11 @@ const cors = require('cors');
 const { connectDB, db } = require('./config/db');
 const router = require('./controller/searchController');
 const app = express();
+const corsOpts = {
+    origin: '*',
+    methods: ['GET'],
+    allowedHeaders: ['Content-Type'],
+};
 
 connectDB().then(() => {
     const PORT = process.env.PORT | 3005;
@@ -13,7 +18,7 @@ connectDB().then(() => {
     })
 })
 
-app.use(cors());
+app.use(cors(corsOpts));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
