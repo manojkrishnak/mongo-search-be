@@ -23,6 +23,10 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/", router)
 
+app.get("/", function(req, res){
+    res.send("Welcome to skybnb")   
+})
+
 app.use(function (req, res, next) {
     console.log(`${req.method} ${req.path} `)
     next()
