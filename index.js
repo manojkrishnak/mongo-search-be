@@ -6,7 +6,7 @@ const { connectDB, db } = require('./config/db');
 const router = require('./controller/searchController');
 const app = express();
 const corsOpts = {
-    origin: '*',
+    origin: 'https://mongo-search-app.onrender.com',
     methods: ['GET'],
     allowedHeaders: ['Content-Type'],
 };
