@@ -13,17 +13,15 @@ connectDB().then(() => {
     })
 })
 
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    next();
-});
+app.options('*', cors())
+// app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/", router)
 
-app.get("/", function(req, res){
-    res.send("Welcome to skybnb")   
+app.get("/", function (req, res) {
+    res.send("Welcome to skybnb")
 })
 
 app.use(function (req, res, next) {
