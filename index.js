@@ -8,7 +8,7 @@ const app = express();
 
 
 connectDB().then(() => {
-    const PORT = process.env.PORT | 3005;
+    const PORT = process.env.PORT || 3005;
     app.listen(PORT, () => {
         console.log('<-------------- BackendApp running on port ', PORT)
     })
