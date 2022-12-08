@@ -19,6 +19,7 @@ connectDB().then(() => {
 })
 
 app.use(cors(corsOpts));
+app.options('*', cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
